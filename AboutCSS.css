@@ -1,0 +1,32 @@
+
+
+
+.containerABOUT {
+	font-size: 18px;
+    display: grid;
+    grid-gap: 140px;
+    grid-template-columns: 500px 650px 1fr;
+    justify-items: top;
+    align-items: top;
+    padding-left: 200px;
+}
+
+.zone {
+    /*display:inline-block;*/
+    text-align: center;
+    font-size:8em;
+    transition: all 0.3s linear;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.l {
+	text-align: center;
+	font-size: 25px
+}
+
+
+
+
+
+

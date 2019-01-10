@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<script src="rellax.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu Mono' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="HomeCSS.css">
+</head>
+<body>
+
+	<div class = "title">
+		Welcome!
+	</div>	
+	<div class="rellax d1">
+	    <img src="2.png" width="70%"/>
+	</div> 
+	<div class = "msg">
+		<div id = "typedtext"></div>
+	</div>  
+	<div class="rellax d2" data-rellax-speed="6">
+	    <img src="1.png" width="100%"/>
+
+	</div>        
+	<div class="rellax d3" data-rellax-speed="8">
+	    <img src="3.png" width="100%"/>
+	</div>
+	        
+	<div class="rellax d4" data-rellax-speed="2">
+	    <img src="4.png" width="90%"/>
+	</div>
+
+<div class = "container">
+	<div class = "menu">
+	<ul>
+      <li>
+        <a href="Home.html">Home</a>
+      </li>
+      <li>
+        <a href="About.html">About</a>
+      </li>
+      <li>
+        <a href="#">Projects</a>
+      </li>
+       <li>
+        <a href="#">Contact Me</a>
+      </li>
+    </ul> 
+	</div>
+
+
+<script type="text/javascript" src="rellax.js"></script>
+    <script>
+    	var rellax = new Rellax('.rellax', {
+        	callback: function(position) {
+                console.log(position);
+            }
+          });
+    </script>
+<script type="text/javascript">
+	var aText = new Array(
+	"Hi my name is Rajan Rahman and I am a junior full stacks engineer.", 
+	"I use Javascript and React to make cool apps. Please go ahead and explore my website!"
+	);
+	var iSpeed = 75; // time delay of print out
+	var iIndex = 0; // start printing array at this posision
+	var iArrLength = aText[0].length; // the length of the text array
+	var iScrollAt = 20; // start scrolling up at this many lines
+	 
+	var iTextPos = 0; // initialise text position
+	var sContents = ''; // initialise contents variable
+	var iRow; // initialise current row
+	 
+	function typewriter()
+	{
+	 sContents =  ' ';
+	 iRow = Math.max(0, iIndex-iScrollAt);
+	 var destination = document.getElementById("typedtext");
+	 
+	 while ( iRow < iIndex ) {
+	  sContents += aText[iRow++] + '<br />';
+	 }
+	 destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+	 if ( iTextPos++ == iArrLength ) {
+	  iTextPos = 0;
+	  iIndex++;
+	  if ( iIndex != aText.length ) {
+	   iArrLength = aText[iIndex].length;
+	   setTimeout("typewriter()", 500);
+	  }
+	 } else {
+	  setTimeout("typewriter()", iSpeed);
+	 }
+	}
+	typewriter();
+</script>
+
+</body>
+</html>
